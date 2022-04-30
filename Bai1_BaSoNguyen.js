@@ -20,28 +20,31 @@ function sort() {
 
         //B2: Thực hiện so sánh
 
-    if (one>two) 
+    if ((one>two) && (two>three)) 
+    { document.getElementById("output").innerHTML = three + " < " + two + " < " + one;}
+    else
     {
-         temp = one;
-         one = two;
-         two = temp;
-    }
-
-    if (one>three) 
-    {
-        temp = one;
-        one = three;
-        three = temp;        
-    }
-
-    if (two>three)
-    {
-        temp = two;
-        two = three;
-        three = temp;
+        if ((one>three) && (three>two))
+        { document.getElementById("output").innerHTML = two + " < " + three + " < " + one;}
+        else
+        {
+            if ((three>one) && (one>two))
+            { document.getElementById("output").innerHTML = two + " < " + one + " < " + three;}
+            else
+            {
+                if ((two>three) && (three>one))
+                    { document.getElementById("output").innerHTML = one + " < " + three + " < " + two;}
+                    else
+                {   if ((two>one) && (one>three))
+                    { document.getElementById("output").innerHTML = three + " < " + one + " < " + two;}
+                    else                    
+                    { document.getElementById("output").innerHTML = one + " < " + two + " < " + three;}
+                }
+            }  
+        }  
     }
 
         //B3: xuất kết quả
     document.getElementById("ketQua").style.display = "block";
-    document.getElementById("output").innerHTML = one + " " + two + " " + three;
+    // document.getElementById("output").innerHTML = one + " " + two + " " + three;
 }
