@@ -16,28 +16,29 @@ function tamGiac() {
 var one = document.getElementById("soThuNhat").value;
 var two = document.getElementById("soThuHai").value;
 var three = document.getElementById("soThuBa").value;
-
+var count1 = one**2;
+var count2 = two**2;
+var count3 = three**2;
     //B2: Thực hiện so sánh
 
-if ((one == two) || (one == three) || (two==three))
+if ((one == two) && (one == three) && (two == three))
+    {document.getElementById("output").innerHTML = "Hình tam giác đều";}
+else
     {
-        document.getElementById("output").innerHTML = "3 cạnh được nhập tạo nên tam giác cân";
+    if ((one == two) || (one == three) || (two==three))
+        {document.getElementById("output").innerHTML = "Hình tam giác cân";}
+    else
+        {
+        if ((count1 + count2 == count3) 
+        || (count1 + count3 == count2) 
+        || (count1 == count2 + count3))
+            {document.getElementById("output").innerHTML = "Hình tam giác vuông";}   
+        else
+            {document.getElementById("output").innerHTML = "Một loại tam giác khác";}   
+        }
     }
 
-if ((one == two) && (one == three) && (two==three))
-    {
-        document.getElementById("output").innerHTML = "3 cạnh được nhập tạo nên tam giác đều";
-    }
-   var count1 = one**2;
-   var count2 = two**2;
-   var count3 = three**2;
 
-if ((count1 + count2 == count3) 
-|| (count1 + count3 == count2) 
-|| (count1 == count2 + count3))
-    {
-        document.getElementById("output").innerHTML = "3 cạnh được nhập tạo nên tam giác vuông";
-    }
 
     //B3: xuất kết quả
 document.getElementById("ketQua").style.display = "block";
